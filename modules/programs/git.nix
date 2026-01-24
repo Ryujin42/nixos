@@ -3,10 +3,11 @@
 {
   programs.git = {
     enable = true;
-    settings.users = {
+    settings.user = {
       name  = "ryujin";
       email = "ryujin.hector@gmail.com";
     };
+    
     extraConfig = {
       init.defaultBranch = "main";
     };
