@@ -12,19 +12,25 @@
     btop
     curl
     eza
-    fastfetch
     fzf
     galculator
+    gcc
+    gradle
     grim
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     nodejs
+    openjdk21
     protonup-ng
+    python311
     ripgrep
     slurp
+    stdenv.cc.cc.lib
     swaylock
     tesseract
+    unzip
     wget
     wl-clipboard
+    zip
 
     # fonts
     nerd-fonts.jetbrains-mono

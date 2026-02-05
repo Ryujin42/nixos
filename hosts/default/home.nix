@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/programs/apps.nix
+    ../../modules/programs/fastfetch/fastfetch.nix
     ../../modules/programs/firefox.nix
     ../../modules/programs/fish.nix
     ../../modules/programs/git.nix
@@ -77,6 +78,7 @@
     + "$XDG_DATA_DIRS";
 
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   };
 
   # Let Home Manager install and manage itself.
