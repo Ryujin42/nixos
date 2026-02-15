@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/programs/apps.nix
+    ../../modules/programs/adb.nix
     ../../modules/programs/fastfetch/fastfetch.nix
     ../../modules/programs/firefox.nix
     ../../modules/programs/fish.nix

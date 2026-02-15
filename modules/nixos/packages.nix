@@ -18,6 +18,7 @@
     gradle
     grim
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ncdu
     nodejs
     openjdk21
     protonup-ng

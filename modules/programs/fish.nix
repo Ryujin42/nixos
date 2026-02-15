@@ -13,6 +13,7 @@ let
     z = "zoxide";
     cd = "z";
     nrs = "sudo nixos-rebuild switch --flake ~/nixos#hostname";
+    ssh = "env TERM=xterm-256color ssh";
   };
 
 in {

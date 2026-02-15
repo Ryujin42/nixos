@@ -28,6 +28,8 @@
     prismlauncher
     pywalfox-native
     qbittorrent
+    retroarch-full
+    scrcpy
     solaar
     vesktop
     swww
