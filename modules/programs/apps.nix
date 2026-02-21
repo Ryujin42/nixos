@@ -5,6 +5,7 @@
   # environment.
 
   home.packages = with pkgs; [
+    android-tools
     brave
     catppuccin-cursors
     discord
@@ -32,8 +33,11 @@
     scrcpy
     solaar
     vesktop
+    vlc
     swww
     virtualbox
     vscodium
   ];
+
+
 }

@@ -12,12 +12,14 @@
     btop
     curl
     eza
+    ffmpeg
     fzf
     galculator
     gcc
     gradle
     grim
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    libva-utils
     ncdu
     nodejs
     openjdk21
@@ -29,6 +31,7 @@
     swaylock
     tesseract
     unzip
+    usbutils
     wget
     wl-clipboard
     zip
@@ -36,6 +39,8 @@
     # fonts
     nerd-fonts.jetbrains-mono
   ];
+
+  programs.adb.enable = true;
 
   fonts.packages = with pkgs; [
     # Maple Mono (Ligature TTF unhinted)

@@ -3,7 +3,6 @@
 {
   imports = [
     ../../modules/programs/apps.nix
-    ../../modules/programs/adb.nix
     ../../modules/programs/fastfetch/fastfetch.nix
     ../../modules/programs/firefox.nix
     ../../modules/programs/fish.nix
@@ -14,6 +13,7 @@
     ../../modules/programs/rofi/rofi.nix
     ../../modules/programs/starship/starship.nix
     ../../modules/programs/obs.nix
+    ../../modules/programs/openrgb.nix
     ../../modules/programs/swaync.nix
     ../../modules/programs/tmux.nix
     ../../modules/programs/waybar.nix
