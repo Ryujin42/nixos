@@ -13,6 +13,7 @@
     curl
     eza
     ffmpeg
+    fd
     fzf
     galculator
     gcc
