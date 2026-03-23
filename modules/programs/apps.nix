@@ -17,6 +17,7 @@
     quickshell
     lazygit
     libnotify
+    liquidctl
     lmstudio
     matugen
     melonDS
@@ -25,6 +26,7 @@
     nemo-with-extensions
     nerd-fonts.jetbrains-mono
     nwg-look
+    pcsx2
     pinta
     prismlauncher
     pywalfox-native
@@ -37,6 +39,7 @@
     swww
     virtualbox
     vscodium
+    xdotool
   ];
 
 

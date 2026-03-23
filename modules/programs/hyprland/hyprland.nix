@@ -274,8 +274,8 @@
       bind = $mainMod SHIFT, S, split-movetoworkspace, special:magic
 
       # Scroll through existing workspaces
-      bind = $mainMod, mouse_down, split-workspace, e+1
-      bind = $mainMod, mouse_up, split-workspace, e-1
+      bind = $mainMod, mouse_down, split-workspace, e-1
+      bind = $mainMod, mouse_up, split-workspace, e+1
 
       # Move/resize windows with mouse
       bindm = $mainMod, mouse:272, movewindow
@@ -297,8 +297,8 @@
 
       # screenshot
       bind = , Print, exec, grim -g "$(slurp)" - | wl-copy
-      bind = CTRL, Print, exec, grim - | wl-copy
-      bind = ALT, Print, exec, grim -t focused - | wl-copy
+      bind = CTRL, Print, exec, grim -g "$(hyprctl monitors -j | jq -r '.[] | select(.focused) | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
+      bind = ALT, Print, exec, grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy
       bind = $mainMod CTRL, T, exec, ./screenshot-ocr.sh
 
       # Theme

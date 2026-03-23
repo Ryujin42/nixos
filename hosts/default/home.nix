@@ -9,11 +9,11 @@
     ../../modules/programs/git.nix
     ../../modules/programs/gtk.nix
     ../../modules/programs/kitty/kitty.nix
+    ../../modules/programs/neovim.nix
     ../../modules/programs/nvf-config.nix
     ../../modules/programs/rofi/rofi.nix
     ../../modules/programs/starship/starship.nix
     ../../modules/programs/obs.nix
-    ../../modules/programs/openrgb.nix
     ../../modules/programs/swaync.nix
     ../../modules/programs/tmux.nix
     ../../modules/programs/waybar.nix

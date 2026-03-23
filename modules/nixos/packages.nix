@@ -19,6 +19,7 @@
     gradle
     grim
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    jq
     libva-utils
     ncdu
     nodejs
