@@ -10,7 +10,7 @@
     ../../modules/programs/gtk.nix
     ../../modules/programs/kitty/kitty.nix
     ../../modules/programs/neovim.nix
-    ../../modules/programs/nvchad.nix
+#    ../../modules/programs/nvchad.nix
     ../../modules/programs/rofi/rofi.nix
     ../../modules/programs/starship/starship.nix
     ../../modules/programs/obs.nix
