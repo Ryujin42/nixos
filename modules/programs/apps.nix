@@ -12,6 +12,7 @@
     docker
     filezilla
     glib
+    godot
     gsettings-desktop-schemas
     heroic
     quickshell
@@ -33,13 +34,18 @@
     qbittorrent
     retroarch-full
     scrcpy
+    shotcut
     solaar
+    telegram-desktop
     vesktop
     vlc
     swww
     virtualbox
     vscodium
     xdotool
+
+    android-file-transfer
+    jmtpfs
   ];
 
 

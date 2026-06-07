@@ -9,6 +9,6 @@
   users.users.ryujin = {
     isNormalUser = true;
     description = "ryujin";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "plugdev" ];
   };
 }

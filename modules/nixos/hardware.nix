@@ -26,9 +26,4 @@
       port = 6742; 
     }; 
   };
-
-  hardware.opengl = {
-    enable = true;
-    driSupport32Bit = true;  # critical for 32-bit games and Proton
-  };
 }

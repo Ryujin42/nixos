@@ -22,7 +22,8 @@ in {
     shellAliases = aliasSet;
     shellInit = ''
         function fish_greeting; fastfetch; end;
-        function mkcd; mkdir $argv[1] -p; if test -d "$argv[1]"; cd $argv[1]; end; end; 
+        function mkcd; mkdir $argv[1] -p; if test -d "$argv[1]"; cd $argv[1]; end; end;
+        fish_add_path ~/.local/bin
       '';
     plugins = [
       {
@@ -30,5 +31,10 @@ in {
         src = pkgs.fishPlugins.plugin-git.src;
       }
     ];
+    functions = {
+      fish_user_key_bindings = ''
+        bind \cs 'tmux-sessionizer'
+      '';
+    };
   };
 }

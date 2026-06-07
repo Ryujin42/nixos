@@ -10,7 +10,9 @@
     bat
     brightnessctl
     btop
+    cargo
     curl
+    exiftool
     eza
     ffmpeg
     fd
@@ -28,6 +30,7 @@
     protonup-ng
     python311
     ripgrep
+    rustup
     slurp
     stdenv.cc.cc.lib
     swaylock

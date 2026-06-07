@@ -10,6 +10,7 @@
     ../../modules/programs/gtk.nix
     ../../modules/programs/kitty/kitty.nix
     ../../modules/programs/neovim.nix
+    ../../modules/programs/liquidctl.nix
 #    ../../modules/programs/nvchad.nix
     ../../modules/programs/rofi/rofi.nix
     ../../modules/programs/starship/starship.nix
@@ -76,6 +77,7 @@
     XDG_DATA_DIRS =
     "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:"
     + "${pkgs.glib}/share/gsettings-schemas/${pkgs.glib.name}:"
+    + "\${HOME}/.local/share/flatpak/exports/share:"
     + "$XDG_DATA_DIRS";
 
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";

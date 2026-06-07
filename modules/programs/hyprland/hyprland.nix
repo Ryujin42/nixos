@@ -6,9 +6,9 @@
 
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
-    settings = {
-      general = {}; # to avoid warning
-    };
+    # settings = {
+    #   general = {}; # to avoid warning
+    # };
 
     plugins = [
       inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
@@ -98,10 +98,22 @@
   xdg.configFile."hypr/hyprland/rules.conf" = {
     force = true;
     text = ''
-      # Window / workspace rules
-      # windowrule = float, ^(kitty)$
-      # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-      # windowrulev2 = suppressevent maximize, class:.*
+      # Steam main window — tile it
+      windowrule = tile on, match:class steam, match:title ^Steam$
+
+      # All other Steam windows — float and center
+      windowrule = float on, match:class steam, match:title ^(?!Steam$)(.*)$
+      windowrule = center on, match:class steam, match:title ^(?!Steam$)(.*)$
+
+      # Galculator
+      windowrule = float on, match:class galculator
+
+      # Suppress maximize requests
+      windowrule {
+        name = no_maximize
+        match:class = .*
+        suppress_event = maximize
+      }
     '';
   };
 
