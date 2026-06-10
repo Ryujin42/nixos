@@ -10,7 +10,7 @@
     ../../modules/programs/gtk.nix
     ../../modules/programs/kitty/kitty.nix
     ../../modules/programs/neovim.nix
-    ../../modules/programs/liquidctl.nix
+#    ../../modules/programs/liquidctl.nix
 #    ../../modules/programs/nvchad.nix
     ../../modules/programs/rofi/rofi.nix
     ../../modules/programs/starship/starship.nix
@@ -81,7 +81,7 @@
     + "$XDG_DATA_DIRS";
 
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+    # LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   };
 
   # Let Home Manager install and manage itself.

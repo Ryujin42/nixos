@@ -21,7 +21,14 @@ in {
     enable = true;
     shellAliases = aliasSet;
     shellInit = ''
-        function fish_greeting; fastfetch; end;
+        function fish_greeting
+          if not set -q IN_NIX_SHELL
+            fastfetch
+          else
+            clear
+          end
+        end
+
         function mkcd; mkdir $argv[1] -p; if test -d "$argv[1]"; cd $argv[1]; end; end;
         fish_add_path ~/.local/bin
       '';

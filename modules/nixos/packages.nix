@@ -12,6 +12,7 @@
     btop
     cargo
     curl
+    ethtool
     exiftool
     eza
     ffmpeg
@@ -23,12 +24,14 @@
     grim
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     jq
+    libgcc
     libva-utils
+    lshw
     ncdu
     nodejs
     openjdk21
     protonup-ng
-    python311
+    python3
     ripgrep
     rustup
     slurp
@@ -45,7 +48,7 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  programs.adb.enable = true;
+  # programs.adb.enable = true;
 
   fonts.packages = with pkgs; [
     # Maple Mono (Ligature TTF unhinted)

@@ -17,6 +17,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "25.11";
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

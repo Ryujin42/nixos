@@ -25,9 +25,12 @@
       @import "colors.css";
     '';
 
-    gtk4.extraCss = ''
-      @import "colors.css";
-    '';
+    gtk4 = {
+      extraCss = ''
+        @import "colors.css";
+      '';
+      theme = config.gtk.theme;
+    };
 
   };
 }

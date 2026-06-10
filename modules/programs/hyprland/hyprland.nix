@@ -5,6 +5,7 @@
     enable = true;
 
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    configType = "hyprlang";
 
     # settings = {
     #   general = {}; # to avoid warning
@@ -166,7 +167,7 @@
     force = true;
     text = ''
       dwindle {
-        pseudotile = true
+        # pseudotile = true
         preserve_split = true
       }
       master {
@@ -239,7 +240,7 @@
       bind = $mainMod, V, togglefloating
       bind = $mainMod, F, fullscreen
       bind = $mainMod, M, fullscreen, 1
-      bind = $mainMod, J, togglesplit
+      bind = $mainMod, J, layoutmsg, togglesplit
 
       # Focus
       bind = $mainMod, left, movefocus, l

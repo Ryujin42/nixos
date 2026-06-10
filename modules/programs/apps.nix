@@ -6,6 +6,7 @@
 
   home.packages = with pkgs; [
     android-tools
+    awww
     brave
     catppuccin-cursors
     discord
@@ -21,7 +22,7 @@
     liquidctl
     lmstudio
     matugen
-    melonDS
+    melonds
     musescore
     muse-sounds-manager
     nemo-with-extensions
@@ -39,7 +40,6 @@
     telegram-desktop
     vesktop
     vlc
-    swww
     virtualbox
     vscodium
     xdotool

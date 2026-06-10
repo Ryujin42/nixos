@@ -6,6 +6,9 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
+    withRuby = true;
+    withPython3 = true;
   };
 
   home.packages = with pkgs; [
