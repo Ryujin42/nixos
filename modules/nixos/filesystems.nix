@@ -2,7 +2,7 @@
 
 {
   fileSystems."/mnt/data" = {
-    device = "/dev/nvme1n1p1";
+    device = "/dev/nvme0n1p1";
     fsType = "ntfs3";
     options = [ # If you don't have this options attribute, it'll default to "defaults" 
       # boot options for fstab. Search up fstab mount options you can use
@@ -17,7 +17,7 @@
   };
 
   fileSystems."/mnt/windows" = {
-    device = "/dev/nvme0n1p3";
+    device = "/dev/nvme1n1p3";
     fsType = "ntfs3";
     options = [ # If you don't have this options attribute, it'll default to "defaults" 
       # boot options for fstab. Search up fstab mount options you can use

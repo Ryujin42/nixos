@@ -674,13 +674,13 @@
       "locked": {
         "lastModified": 1781037129,
         "narHash": "sha256-NOSQSNxP5+8LOgFzZdKjipryir0AgEVcPjqtFTYiiqc=",
-        "owner": "Duckonaut",
+        "owner": "zjeffer",
         "repo": "split-monitor-workspaces",
         "rev": "44f6b1213073bc2a95756d9f73a076e8b480ceaa",
         "type": "github"
       },
       "original": {
-        "owner": "Duckonaut",
+        "owner": "zjeffer",
         "repo": "split-monitor-workspaces",
         "type": "github"
       }
