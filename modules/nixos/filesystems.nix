@@ -2,31 +2,24 @@
 
 {
   fileSystems."/mnt/data" = {
-    device = "/dev/nvme0n1p1";
-    fsType = "ntfs3";
-    options = [ # If you don't have this options attribute, it'll default to "defaults" 
-      # boot options for fstab. Search up fstab mount options you can use
-      "uid=1000"   # replace with your actual UID from `id`
-      "gid=1000"   # replace with your actual GID from `id`
+    device = "/dev/disk/by-uuid/e26b8796-2335-4966-b6fe-c0ff53f33a46";
+    fsType = "ext4";
+    options = [
       "rw"
-      "users" # Allows any user to mount and unmount
-      "nofail" # Prevent system from failing if this drive doesn't mount
-      "exec" # Permit execution of binaries and other executable files
-      "umask=022"
+      "nofail"
     ];
   };
 
   fileSystems."/mnt/windows" = {
-    device = "/dev/nvme1n1p3";
+    device = "/dev/disk/by-uuid/0CDE2660DE2641F6";
     fsType = "ntfs3";
-    options = [ # If you don't have this options attribute, it'll default to "defaults" 
-      # boot options for fstab. Search up fstab mount options you can use
-      "uid=1000"   # replace with your actual UID from `id`
-      "gid=1000"   # replace with your actual GID from `id`
+    options = [
+      "uid=1000"
+      "gid=1000"
       "rw"
-      "users" # Allows any user to mount and unmount
-      "nofail" # Prevent system from failing if this drive doesn't mount
-      "exec" # Permit execution of binaries and other executable files
+      "users"
+      "nofail"
+      "exec"
       "umask=022"
     ];
   };

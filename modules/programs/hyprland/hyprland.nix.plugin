@@ -5,7 +5,7 @@
     enable = true;
 
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    configType = "lua";
+    configType = "hyprlang";
 
     settings = {
       "$mod" = "SUPER";
@@ -186,12 +186,12 @@
     '';
   };
 
-  # Your original autostart (swww + waybar)
+  # Your original autostart (awww + waybar)
   xdg.configFile."hypr/hyprland/execs.conf" = {
     force = true;
     text = ''
       # Autostart
-      exec-once = swww-daemon &
+      exec-once = awww-daemon &
       exec-once = waybar &
     '';
   };
