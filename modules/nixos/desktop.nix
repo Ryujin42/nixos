@@ -11,4 +11,7 @@
   };
 
   hardware.bluetooth.enable = true;
+
+  security.pam.services.sddm.kwallet.enable = false;
+
 }

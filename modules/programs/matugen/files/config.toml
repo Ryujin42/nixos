@@ -1,7 +1,5 @@
 [config.wallpaper]
-command = "awww"
-arguments = ["img", "--transition-type", "center", "--transition-fps", "60"]
-set = true
+set = false
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'

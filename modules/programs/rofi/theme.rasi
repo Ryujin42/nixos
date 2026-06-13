@@ -47,23 +47,45 @@ message {
 }
 
 inputbar {
+    background-color: @surface;
+    padding: 14px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @primary;
+    margin: 0px 1em 0em 0em ;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @on-surface;
+    placeholder-color: @on-surface;
+    border: 0px;
+}
+
+/*
+inputbar {
     color: @foreground;
     padding: 14px;
-    background-color: @background;
+    background-color: @outline;
     border-color: @background;
 
     border: 1px;
     border-radius: 10px 10px 0px 0px;
 }
 
+
 entry, prompt, case-indicator {
     text-font: inherit;
-    text-color: inherit;
+    text-color: @on-surface;
 }
+
 
 prompt {
     margin: 0px 1em 0em 0em ;
-}
+}*/
 
 listview {
     padding: 8px;

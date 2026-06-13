@@ -55,9 +55,15 @@ in
             "default" = "";
             "empty" = "";
           };
-          "on-scroll-up" = "hyprctl dispatch split-cycleworkspaces -1";
-          "on-scroll-down" = "hyprctl dispatch split-cycleworkspaces +1";
           "all-outputs" = false;
+
+          "persistent-workspaces" = {
+            "DP-3" = [ 1 2 3 4 5 ];
+            "DP-1" = [ 11 12 13 14 15 ];
+            "DP-2" = [ 21 22 23 24 25 ];
+          };
+          "on-scroll-down" = "~/nixos/modules/programs/hyprland/scripts/cycle-local-workspace.fish next";
+          "on-scroll-up" = "~/nixos/modules/programs/hyprland/scripts/cycle-local-workspace.fish prev";
         };
 
 
@@ -159,7 +165,7 @@ in
       * {
         border: none;
         border-radius: 50px;
-        font-family: "Maple Propo NF", "${sans}", "JetBrainsMono Nerd Font Propo", Roboto, Helvetica, Arial, sans-serif;
+        font-family: "JetBrainsMono Nerd Font Propo", Roboto, Helvetica, Arial, sans-serif;
         font-weight: 600;
         font-size: 1rem;
         min-height: 0;

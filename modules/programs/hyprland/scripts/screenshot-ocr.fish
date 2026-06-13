@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 TEMP_IMG=$(mktemp /tmp/ocr_screenshot.XXXXXX.png)
 

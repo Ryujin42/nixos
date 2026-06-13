@@ -47,6 +47,13 @@
     '';
   };
 
+  home.file = {
+    ".config/nvim/lua" = {
+      source = ./nvim/lua;   # a folder next to this .nix file
+      recursive = true;
+    };
+  };
+
   home.packages = with pkgs; [
     git
     ripgrep

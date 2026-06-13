@@ -5,16 +5,18 @@
     enable = true;
 
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  
     configType = "hyprlang";
 
     settings = {
       "$mod" = "SUPER";
     };
 
-    plugins = [
-      inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
-      # inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors
-    ];
+    # plugins = [
+    #   inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
+    #   # inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors
+    # ];
   };
 
   # ===== Hyprland main file =====
@@ -28,6 +30,7 @@
 
       source = ~/.config/hypr/hyprland/env.conf
       source = ~/.config/hypr/hyprland/monitors.conf
+      source = ~/.config/hypr/hyprland/workspaces.conf
       source = ~/.config/hypr/hyprland/general.conf
       source = ~/.config/hypr/hyprland/decoration.conf
       source = ~/.config/hypr/hyprland/animation.conf
@@ -134,6 +137,29 @@
       monitor = DP-3, 2560x1440@60Hz, 0x0, 1
       monitor = DP-1, 2560x1440@180Hz, 2560x0, 1
       monitor = DP-2, 2560x1440@60Hz, 5120x0, 1
+    '';
+  };
+
+  xdg.configFile."hypr/hyprland/workspaces.conf" = {
+    force = true;
+    text = ''
+      workspace = 1, monitor:DP-3, default:true
+      workspace = 2, monitor:DP-3
+      workspace = 3, monitor:DP-3
+      workspace = 4, monitor:DP-3
+      workspace = 5, monitor:DP-3
+
+      workspace = 11, monitor:DP-1, default:true
+      workspace = 12, monitor:DP-1
+      workspace = 13, monitor:DP-1
+      workspace = 14, monitor:DP-1
+      workspace = 15, monitor:DP-1
+
+      workspace = 21, monitor:DP-2, default:true
+      workspace = 22, monitor:DP-2
+      workspace = 23, monitor:DP-2
+      workspace = 24, monitor:DP-2
+      workspace = 25, monitor:DP-2
     '';
   };
 
@@ -255,40 +281,40 @@
       bind = $mainMod CTRL, down, swapwindow, d
 
       # Workspaces
-      bind = $mainMod, ampersand, workspace, 1
-      bind = $mainMod, eacute, workspace, 2
-      bind = $mainMod, quotedbl, workspace, 3
-      bind = $mainMod, apostrophe, workspace, 4
-      bind = $mainMod, parenleft, workspace, 5
-      bind = $mainMod, minus, workspace, 6
-      bind = $mainMod, egrave, workspace, 7
-      bind = $mainMod, underscore, workspace, 8
-      bind = $mainMod, ccedilla, workspace, 9
-      bind = $mainMod, agrave, workspace, 10
+      bind = $mainMod, ampersand, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 1
+      bind = $mainMod, eacute, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 2
+      bind = $mainMod, quotedbl, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 3
+      bind = $mainMod, apostrophe, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 4
+      bind = $mainMod, parenleft, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 5
+      bind = $mainMod, minus, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 6
+      bind = $mainMod, egrave, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 7
+      bind = $mainMod, underscore, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 8
+      bind = $mainMod, ccedilla, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 9
+      bind = $mainMod, agrave, exec, ~/nixos/modules/programs/hyprland/scripts/local-workspace.fish 10
 
       # Move window to workspace
-      bind = $mainMod SHIFT, ampersand, movetoworkspace, 1
-      bind = $mainMod SHIFT, eacute, movetoworkspace, 2
-      bind = $mainMod SHIFT, quotedbl, movetoworkspace, 3
-      bind = $mainMod SHIFT, apostrophe, movetoworkspace, 4
-      bind = $mainMod SHIFT, parenleft, movetoworkspace, 5
-      bind = $mainMod SHIFT, minus, movetoworkspace, 6
-      bind = $mainMod SHIFT, egrave, movetoworkspace, 7
-      bind = $mainMod SHIFT, underscore, movetoworkspace, 8
-      bind = $mainMod SHIFT, ccedilla, movetoworkspace, 9
-      bind = $mainMod SHIFT, agrave, movetoworkspace, 10
+      bind = $mainMod SHIFT, ampersand, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 1
+      bind = $mainMod SHIFT, eacute, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 2
+      bind = $mainMod SHIFT, quotedbl, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 3
+      bind = $mainMod SHIFT, apostrophe, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 4
+      bind = $mainMod SHIFT, parenleft, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 5
+      bind = $mainMod SHIFT, minus, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 6
+      bind = $mainMod SHIFT, egrave, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 7
+      bind = $mainMod SHIFT, underscore, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 8
+      bind = $mainMod SHIFT, ccedilla, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 9
+      bind = $mainMod SHIFT, agrave, exec, ~/nixos/modules/programs/hyprland/scripts/move-local-workspace.fish 10
 
       # Move window to another screen
-      # bind = $mainMod SHIFT, right, changemonitor, +1
-      # bind = $mainMod SHIFT, left, changemonitor, -1
+      bind = $mainMod SHIFT, left, exec, ~/nixos/modules/programs/hyprland/scripts/move-monitor.fish left
+      bind = $mainMod SHIFT, right, exec, ~/nixos/modules/programs/hyprland/scripts/move-monitor.fish right
 
       # Special workspace
       bind = $mainMod, S, togglespecialworkspace, magic
       bind = $mainMod SHIFT, S, movetoworkspace, special:magic
 
       # Scroll through existing workspaces
-      bind = $mainMod, mouse_down, workspace, e-1
-      bind = $mainMod, mouse_up, workspace, e+1
+      bind = $mainMod, mouse_down, exec, ~/nixos/modules/programs/hyprland/scripts/cycle-local-workspace.fish prev
+      bind = $mainMod, mouse_up, exec, ~/nixos/modules/programs/hyprland/scripts/cycle-local-workspace.fish next
 
       # Move/resize windows with mouse
       bindm = $mainMod, mouse:272, movewindow
@@ -312,7 +338,7 @@
       bind = , Print, exec, grim -g "$(slurp)" - | wl-copy
       bind = CTRL, Print, exec, grim -g "$(hyprctl monitors -j | jq -r '.[] | select(.focused) | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
       bind = ALT, Print, exec, grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy
-      bind = $mainMod CTRL, T, exec, ./screenshot-ocr.sh
+      bind = $mainMod CTRL, T, exec, ~/nixos/modules/programs/hyprland/screenshot-ocr.fish
 
       # Theme
       bind = $mainMod, T, exec, theme-switcher

@@ -9,7 +9,7 @@
     ../../modules/programs/git.nix
     ../../modules/programs/gtk.nix
     ../../modules/programs/kitty/kitty.nix
-    ../../modules/programs/neovim.nix
+    ../../modules/programs/nvim/nvim.nix
 #    ../../modules/programs/liquidctl.nix
 #    ../../modules/programs/nvchad.nix
     ../../modules/programs/rofi/rofi.nix

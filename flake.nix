@@ -12,14 +12,14 @@
     nvf.url = "github:notashelf/nvf";
 
     hyprland.url = "github:hyprwm/Hyprland";
-    split-monitor-workspaces = {
-      url = "github:zjeffer/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
-    };
-    hypr-dynamic-cursors = {
-      url = "github:VirtCode/hypr-dynamic-cursors";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # split-monitor-workspaces = {
+    #   url = "github:zjeffer/split-monitor-workspaces";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
+    # hypr-dynamic-cursors = {
+    #   url = "github:VirtCode/hypr-dynamic-cursors";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -34,37 +34,53 @@
     # stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs@{ self,
-        nixpkgs,
-        home-manager,
-        nvf,
-        firefox-addons,
-        ... }: {
-    nixosConfigurations.hostname = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+  outputs = inputs@{ 
+    self,
+    nixpkgs,
+    home-manager,
+    # split-monitor-workspaces,
+    nvf,
+    firefox-addons,
+    ... 
+  }: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};  
+  in {
+    nixosConfigurations = {
+      hostname = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs self; };
 
-      specialArgs = {inherit inputs self;};
-      modules = [
-        # stylix.nixosModules.stylix
-        ./hosts/default/configuration.nix
-        
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.extraSpecialArgs = {inherit inputs;};
+        modules = [
+          # stylix.nixosModules.stylix
+          ./hosts/default/configuration.nix
+          
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              extraSpecialArgs = {inherit inputs;};
 
-          # Import nvf HM module here
-          home-manager.users.ryujin = {
+              users.ryujin = {
+                # wayland.windowManager.hyprland = {
+                #   # ...
+                #   plugins = [
+                #     split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces
+                #   ];
+                #   # ...
+                # };
 
-            imports = [
-              nvf.homeManagerModules.default
-              ./hosts/default/home.nix
-            ];
-          };
-        }
-      ];
+                imports = [
+                  nvf.homeManagerModules.default
+                  ./hosts/default/home.nix
+                ];
+              };
+            };
+          }
+        ];
+      };
     };
   };
 }
