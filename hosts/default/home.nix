@@ -10,11 +10,10 @@
     ../../modules/programs/gtk.nix
     ../../modules/programs/kitty/kitty.nix
     ../../modules/programs/nvim/nvim.nix
-#    ../../modules/programs/liquidctl.nix
-#    ../../modules/programs/nvchad.nix
     ../../modules/programs/rofi/rofi.nix
     ../../modules/programs/starship/starship.nix
     ../../modules/programs/obs.nix
+    ../../modules/programs/ollama.nix
     ../../modules/programs/swaync.nix
     ../../modules/programs/tmux.nix
     ../../modules/programs/waybar.nix

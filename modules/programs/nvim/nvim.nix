@@ -49,7 +49,7 @@
 
   home.file = {
     ".config/nvim/lua" = {
-      source = ./nvim/lua;   # a folder next to this .nix file
+      source = ./lua;   # a folder next to this .nix file
       recursive = true;
     };
   };
